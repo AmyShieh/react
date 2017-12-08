@@ -2,7 +2,6 @@
  * Created by Amy on 2017/12/6.
  */
 import React,{Component} from 'react';
-import './monitor.css';
 
 class Monitor extends Component{
     render(){
