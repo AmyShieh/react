@@ -3,9 +3,10 @@
  */
 // import {createStore} from 'redux';
 
+// reducer
 const ADD = 'add';
 const MULTIPLE = 'multiple';
-export function conster( state = 0, action){
+export function counter( state = 0, action){
     switch (action.type){
         case ADD:
             return state+1

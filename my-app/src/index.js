@@ -3,13 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
+import { createStore } from 'redux';
+import {counter} from './redux/reducer'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+const store = createStore(counter);
+
+function renderApp(){
+    ReactDOM.render(<App store = {store}/>, document.getElementById('root'));
+}
+renderApp();
+store.subscribe(renderApp)
 registerServiceWorker();
 
 
 //
-// const store = createStore(conster);
 // const init = store.getState();
 // console.log(init);
 //
