@@ -27,7 +27,8 @@
 .content {
   width: 100%;
   height: calc(100% - 70px);
-  background-color: #22273f; }
+  background-color: #22273f;
+  color: #fff; }
 
 html, body {
   width: 100%;

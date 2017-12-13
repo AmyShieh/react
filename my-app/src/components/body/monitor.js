@@ -1,16 +1,21 @@
 /**
  * Created by Amy on 2017/12/6.
  */
-import React,{Component} from 'react';
-
-class Monitor extends Component{
-    render(){
-        return(
-            <div className="monitor">
-                监控
-            </div>
-        )
-    }
-}
-
-export default Monitor;
+/**
+ * Created by Amy on 2017/12/6.
+ */
+// import {createStore} from 'redux';
+//
+// function conster( state = 0, action){
+//     switch (action.type){
+//         case 'add':
+//             return state+1
+//         case 'multiple':
+//             return state-1
+//             return 17
+//     }
+// }
+//
+// const store = createStore(conster);
+// const init = store.getState();
+// console.log(init);

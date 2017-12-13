@@ -1,0 +1,25 @@
+/**
+ * Created by Amy on 2017/12/13.
+ */
+// import {createStore} from 'redux';
+
+const ADD = 'add';
+const MULTIPLE = 'multiple';
+export function conster( state = 0, action){
+    switch (action.type){
+        case ADD:
+            return state+1
+        case MULTIPLE:
+            return state-1
+        default:
+            return 17
+    }
+}
+
+// action creator
+export function AddNum() {
+ return {type:ADD}
+}
+export function MultipleNum() {
+    return{ type: MULTIPLE}
+}

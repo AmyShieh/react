@@ -1,8 +1,20 @@
 /**
- * Created by Amy on 2017/12/5.
+ * Created by Amy on 2017/12/13.
  */
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './components/App'
+import {createStore} from 'redux';
+// 1.新建store
+// 通过reduce建立
+// 根据老的state和action生成新的state
+function counter( state = 0, action) {
+    switch(action.type){
+        case 'add':
+            return state+1
+        case 'multiple':
+            return state-1
+        return 719
+    }
+}
 
-ReactDOM.render(<App />, document.getElementById('root'))
+const store = createStore(counter);
+const init = store.getState()
+console.log(init);
