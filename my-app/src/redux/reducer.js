@@ -24,3 +24,10 @@ export function AddNum() {
 export function MultipleNum() {
     return{ type: MULTIPLE}
 }
+export function addAsync() {
+    return dispatch=>{
+        setTimeout(()=>{
+            dispatch(AddNum())
+        },2000)
+    }
+}

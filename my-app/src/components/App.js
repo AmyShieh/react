@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import {AddNum,MultipleNum,addAsync} from '../redux/reducer';
+
 // import {createStore} from 'redux';
 // import Header from './header';
 // import Body from './body';
 // import Monitor from './body/monitor';
 import './app.css';
 // import {counter} from '../redux/reducer'
-import {AddNum} from '../redux/reducer';
+// import {AddNum} from '../redux/reducer';
 
 
 // const store = createStore(counter);
@@ -23,12 +26,18 @@ import {AddNum} from '../redux/reducer';
 // }
 class App extends Component{
     render(){
-        const store = this.props.store;
-        const num = store.getState();
+        // const store = this.props.store;
+        // const num = store.getState();
+        const num = this.props.num;
+        const AddNum = this.props.AddNum;
+        const addAsync = this.props.addAsync;
+        const MultipleNum = this.props.MultipleNum;
         return(
             <div>
                  现在的数值是{num}
-                <button onClick={()=>store.dispatch(AddNum())}>+</button>
+                <button onClick={AddNum}>+</button>
+                <button onClick={MultipleNum}>-</button>
+                <button onClick={addAsync}>异步+</button>
             </div>
             // <div className="App" >
             //     <Header />
@@ -37,9 +46,9 @@ class App extends Component{
         )
     }
 }
-        // store.subscribe(function () {
-        //     renderApp();
-        //     console.log("数据变化了");
-        // })
-// export default renderApp;
+const mapStatetoProps = (state)=>{
+    return {num:state}
+}
+const actionCreator = {AddNum,MultipleNum,addAsync};
+ App = connect(mapStatetoProps,actionCreator)(App)
 export default App;
